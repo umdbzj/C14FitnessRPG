@@ -24,6 +24,25 @@ int OpponentInfo()
 
 int main(int argc, const char * argv[]) {
     
+    enum MapTypes
+    {
+        Grass,
+        Rock,
+        Incline,
+        Water,
+        Road,
+        Building
+    };
+    
+    enum Directions
+    {
+        North,
+        East,
+        South,
+        West
+    };
+    
+    
     int PlayerStamina = 0;
     std::string PlayerName;
     
