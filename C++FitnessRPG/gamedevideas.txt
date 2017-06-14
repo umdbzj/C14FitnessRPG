@@ -1,0 +1,7 @@
+My ideas for the Fitness RPG:
+
+Initially, I am thinking this will be a race game between the player and NPCs that represent opponents of various sorts.
+
+The player will be an object with many attributes.  I'm thinking traditional D&D sort of system at the moment, but .....
+oh, that could change to be an urban fantasy environment.  GUPS might be a better system.
+
