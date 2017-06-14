@@ -19,7 +19,7 @@ int OpponentInfo()
     std::cout << "Self Doubt has stamina of: " << stamina << std::endl;
     
     
-    return 0;
+    return stamina;
 }
 
 int main(int argc, const char * argv[]) {
@@ -44,6 +44,7 @@ int main(int argc, const char * argv[]) {
     
     
     int PlayerStamina = 0;
+    int NPCStamina = 0;
     std::string PlayerName;
     
     std::cout << "What is your name? ";
@@ -52,7 +53,18 @@ int main(int argc, const char * argv[]) {
     std::cout << "Enter a digit between 1 and 15: ";
     std::cin >> PlayerStamina;
     
+    NPCStamina = OpponentInfo();
+    
+    if (PlayerStamina < NPCStamina)
+    {
+        std::cout << "Good luck.  You'll need it!!" << std::endl;
+    }
+    else {
+        std::cout << "Good luck." << std::endl;
+    }
     
     
-    return OpponentInfo();
+    
+        return 0;
+    
 }
