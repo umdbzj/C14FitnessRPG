@@ -7,6 +7,10 @@
 //
 
 #include <iostream>
+#include "world.hpp"
+
+using namespace std;
+
 
 // Function practice
 int OpponentInfo()
@@ -14,55 +18,62 @@ int OpponentInfo()
     
     int stamina = 15;
     
-    std::cout << "You will be chased across the map by Self Doubt," << std::endl;
-    std::cout << "which is a vampire of incredible persistence and tenancity." << std::endl;
-    std::cout << "Self Doubt has stamina of: " << stamina << std::endl;
+    cout << "You will be chased across the map by Self Doubt," << endl;
+    cout << "which is a vampire of incredible persistence and tenancity." << endl;
+    cout << "Self Doubt has stamina of: " << stamina << endl;
     
     
     return stamina;
 }
 
+
 int main(int argc, const char * argv[]) {
     
-    enum MapTypes
+        
+    enum charAttributes
     {
-        Grass,
-        Rock,
-        Incline,
-        Water,
-        Road,
-        Building
+        strength,
+        stamina,
+        charisma,
+        intelligence,
+        wisdom,
+        dexterity,
+        consitution,
+        health,
+        experience
     };
     
-    enum Directions
+    int playerStats [9] = {0};
+    int NPCStats [9] = {0};
+    int world_size = 1;
+    
+    string PlayerName;
+    
+    cout << "How big do you want the world to be? (One int only!) " << endl;
+    cin >> world_size;
+    
+    CreateWorld(world_size);
+    
+    PrintWorld();
+    
+    cout << "What is your name? ";
+    cin >> PlayerName;
+    
+    cout << "Enter a digit between 1 and 15: ";
+    cin >> playerStats[stamina];
+    
+    NPCStats[stamina] = OpponentInfo();
+    
+    if (playerStats[stamina] < NPCStats[stamina])
     {
-        North,
-        East,
-        South,
-        West
-    };
-    
-    
-    int PlayerStamina = 0;
-    int NPCStamina = 0;
-    std::string PlayerName;
-    
-    std::cout << "What is your name? ";
-    std::cin >> PlayerName;
-    
-    std::cout << "Enter a digit between 1 and 15: ";
-    std::cin >> PlayerStamina;
-    
-    NPCStamina = OpponentInfo();
-    
-    if (PlayerStamina < NPCStamina)
-    {
-        std::cout << "Good luck.  You'll need it!!" << std::endl;
+        cout << "Good luck, " << PlayerName << ".  You'll need it!!" << endl;
+    }
+    else if (playerStats[stamina] == NPCStats[stamina]){
+        cout << "Good luck." << endl;
     }
     else {
-        std::cout << "Good luck." << std::endl;
+        cout << "Oh, " << PlayerName << " you're a rouge?  That vamp doesn't stand a chance!" << endl;
     }
-    
     
     
         return 0;
