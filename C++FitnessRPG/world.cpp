@@ -8,6 +8,7 @@
 
 #include <stdio.h>
 #include <iostream>
+#include <vector>
 #include "world.hpp"
 
 using namespace std;
@@ -15,9 +16,10 @@ using namespace std;
 
 enum MapTypes
 {
-    Grass,
+    Grass = 1,
     Rock,
     Incline,
+    Wall,
     Water,
     Road,
     Building,
@@ -32,14 +34,49 @@ enum Directions
     West
 };
 
-void CreateWorld(int world_size) {
+void InitWorld(int world_size, std::vector<int>& World) {
     int temp = world_size;
     
-    cout << "I am creating a " << temp << " by " << temp << " world" << endl;
+    // min and max of random number generator to match MapTypes enum
+    const int LOW = 1;
+    const int HIGH = 8;
     
+    cout << "I am initializing a " << world_size << " world" << endl;
+    
+    for (int i = 0; i < world_size; i++) {
+        World.push_back(0);
+    }
+    
+    // prep for random numbers
+     time_t seconds;
+     time(&seconds);
+     srand((unsigned int) seconds);
+ 
+    // temp to see if it worked
+    cout << "Your new world: " << endl;
+    for (auto element = World.cbegin(); element != World.cend(); ++ element)
+    {
+        cout << *element << " ";
+    }
+    
+    cout << endl;
 
 }
 
-void PrintWorld() {
-    cout << "I'm printing a world!" << endl;
+void PrintWorld(int world_size, std::vector<int>& World) {
+    int temp = world_size;
+    
+    if (temp == 0) {
+        cout << "You need to create the world first." << endl;
+    }
+    else {
+        cout << "I'm printing the " << temp << " sized map!" << endl;
+        for (auto element = World.cbegin(); element != World.cend(); ++ element)
+        {
+            cout << *element << " ";
+        }
+        
+        cout << endl;
+    }
+
 }

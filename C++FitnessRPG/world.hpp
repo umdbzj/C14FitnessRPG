@@ -9,11 +9,8 @@
 #ifndef world_hpp
 #define world_hpp
 
+void InitWorld(int world_size, std::vector<int>& World);
 
-
-
-void CreateWorld(int world_size);
-
-void PrintWorld();
+void PrintWorld(int world_size, std::vector<int>& World);
 
 #endif /* world_hpp */
