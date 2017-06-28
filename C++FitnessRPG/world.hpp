@@ -13,4 +13,6 @@ void InitWorld(int world_size, std::vector<int>& World);
 
 void PrintWorld(int world_size, std::vector<int>& World);
 
+void UpdateWorld(std::vector<int>& World);
+
 #endif /* world_hpp */

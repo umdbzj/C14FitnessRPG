@@ -49,7 +49,8 @@ void InitWorld(int world_size, std::vector<int>& World) {
     srand((unsigned int) seconds);
     
     for (int i = 0; i < sq_map_size; i++) {
-        World.push_back(rand() % (HIGH - LOW + 1) + LOW);
+      //  World.push_back(rand() % (HIGH - LOW + 1) + LOW);
+        World.push_back(0);  // temp for testing
     }
     
 
@@ -79,7 +80,7 @@ void PrintWorld(int world_size, std::vector<int>& World) {
         for (auto element = World.cbegin(); element != World.cend(); ++ element)
         {
             cout << *element << " ";
-            if ((current_position % world_size) == 0) {
+            if ((current_position % world_size) == 0) {    // make row
                 cout << endl;
             }
             
@@ -90,4 +91,37 @@ void PrintWorld(int world_size, std::vector<int>& World) {
         cout << endl;
     }
 
+}
+
+void UpdateWorld(std::vector<int>& World) {
+    cout << "I'm ready to update!" << endl;
+    
+    // Assuming mutation probability is 0.001 (the default in Chapter 3 of dissertation)
+    const int LOW = 1;
+    const int HIGH = 1000;
+    const int VAL_LOW = 1;
+    const int VAL_HIGH = 9;
+    int test_num = 0;
+    int location = 0;
+    
+    // prep for random numbers
+    time_t seconds;
+    time(&seconds);
+    srand((unsigned int) seconds);
+    
+    // go through all items in the vector and determine if each has probability to mutate
+    // if random number == 1000, then mutate (message and change item to a 9
+    for (auto element = World.cbegin(); element != World.cend(); ++ element)
+    {
+        
+        test_num = (rand() % (HIGH - LOW + 1) + LOW);
+        if (test_num == 1000) {
+            cout << "Mutation at: " << location << endl;
+            World[location] = (rand() % (VAL_HIGH - VAL_LOW + 1) + VAL_LOW);
+            
+        }
+        location += 1;
+    }
+
+    
 }

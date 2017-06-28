@@ -82,13 +82,16 @@ int main(int argc, const char * argv[]) {
                 PrintWorld(world_size, World);
                 break;
             case 4:
-                cout << "I would prompt for your choice of direction and run an update." << endl;
+                cout << "I would prompt for your choice of direction and run an update ";
+                cout << "based on your choice.  Now, I'm just going to try to mutate ";
+                cout << "one or more items in the World." << endl;
+                UpdateWorld(World);
                 break;
             case 8:
                 cout << "This would save the game state." << endl;
                 break;
             case 9:
-                cout << "This would end the game loop." << endl;
+                cout << "See you again soon." << endl;
                 break;
             default:
                 cout << "Sorry, but your choice is not valid.  Please try again." << endl;
@@ -98,7 +101,7 @@ int main(int argc, const char * argv[]) {
         
     } while (controlChoice != 9); // end of do ... while
     
-    
+ /*
 
     cout << "What is your name? ";
     cin >> PlayerName;
@@ -119,6 +122,7 @@ int main(int argc, const char * argv[]) {
         cout << "Oh, " << PlayerName << ", that vamp doesn't stand a chance!" << endl;
     }
     
+   */
     
         return 0;
     
