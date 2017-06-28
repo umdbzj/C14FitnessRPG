@@ -71,7 +71,7 @@ int main(int argc, const char * argv[]) {
         
         switch(controlChoice) {
             case 1:
-                cout << "How big do you want the world to be? (One int between 1 and 10) " << endl;
+                cout << "How big do you want the world to be? (One int between 1 and 50) " << endl;
                 cin >> world_size;
                 InitWorld(world_size, World);
                 break;
