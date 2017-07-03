@@ -9,6 +9,7 @@
 #include <iostream>
 #include <vector>
 #include "world.hpp"
+#include "player.hpp"
 
 using namespace std;
 
@@ -48,13 +49,12 @@ int main(int argc, const char * argv[]) {
         experience
     };
     
-    int playerStats [9] = {0};
-    int NPCStats [9] = {0};
     int world_size = 0;
     int controlChoice = 0;
-    string PlayerName;
+
     
     vector<int> World;
+    Player hero;
     
     // Overall loop to control game flow
     do {
@@ -69,33 +69,39 @@ int main(int argc, const char * argv[]) {
         
         cin >> controlChoice;
         
-        switch(controlChoice) {
-            case 1:
+        // a switch statement would make sense here except I can't seem to create new variables within
+        // each case.
+        if (controlChoice == 1){
                 cout << "How big do you want the world to be? (One int between 1 and 50) " << endl;
                 cin >> world_size;
                 InitWorld(world_size, World);
-                break;
-            case 2:
+                cout << "What is your name? " << endl;
+                cin >> hero.playerName;
+                cout << "Pick a whole number between 1 and 15: " << endl;
+                cin >> hero.playerStats[stamina];
+                cout << "Player " << hero.playerName << " has stamina of " << hero.playerStats[stamina] << endl;
+                hero.sayHello();
+        }
+        else if (controlChoice == 2) {
                 cout << "I would load an existing game at this point." << endl;
-                break;
-            case 3:
+        }
+        else if (controlChoice == 3) {
                 PrintWorld(world_size, World);
-                break;
-            case 4:
+        }
+        else if (controlChoice == 4) {
                 cout << "I would prompt for your choice of direction and run an update ";
                 cout << "based on your choice.  Now, I'm just going to try to mutate ";
                 cout << "one or more items in the World." << endl;
                 UpdateWorld(World);
-                break;
-            case 8:
+        }
+        else if (controlChoice == 8) {
                 cout << "This would save the game state." << endl;
-                break;
-            case 9:
+        }
+        else if (controlChoice == 9) {
                 cout << "See you again soon." << endl;
-                break;
-            default:
+        }
+        else {
                 cout << "Sorry, but your choice is not valid.  Please try again." << endl;
-                break;
         }
 
         
@@ -103,11 +109,6 @@ int main(int argc, const char * argv[]) {
     
  /*
 
-    cout << "What is your name? ";
-    cin >> PlayerName;
-    
-    cout << "Enter a digit between 1 and 15: ";
-    cin >> playerStats[stamina];
     
     NPCStats[stamina] = OpponentInfo();
     

@@ -36,6 +36,7 @@ enum Directions
 
 void InitWorld(int world_size, std::vector<int>& World) {
     int sq_map_size = world_size * world_size;
+    string playerName;
     
     // min and max of random number generator to match MapTypes enum
     const int LOW = 1;
@@ -53,7 +54,6 @@ void InitWorld(int world_size, std::vector<int>& World) {
         World.push_back(0);  // temp for testing
     }
     
-
  
 // test printing to see if it worked
 //   cout << "Your new world: " << endl;

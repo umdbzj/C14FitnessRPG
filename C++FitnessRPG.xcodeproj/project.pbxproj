@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		860D2CD91EF2C9CF008B55A7 /* world.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 860D2CD71EF2C9CF008B55A7 /* world.cpp */; };
+		8612CF521F06923200E7C226 /* player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8612CF501F06923200E7C226 /* player.cpp */; };
 		86D8A1891EE848B8009C78E3 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 86D8A1881EE848B8009C78E3 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,8 @@
 /* Begin PBXFileReference section */
 		860D2CD71EF2C9CF008B55A7 /* world.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = world.cpp; sourceTree = "<group>"; };
 		860D2CD81EF2C9CF008B55A7 /* world.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = world.hpp; sourceTree = "<group>"; };
+		8612CF501F06923200E7C226 /* player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = player.cpp; sourceTree = "<group>"; };
+		8612CF511F06923200E7C226 /* player.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = player.hpp; sourceTree = "<group>"; };
 		86D8A1851EE848B8009C78E3 /* C++FitnessRPG */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "C++FitnessRPG"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86D8A1881EE848B8009C78E3 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,6 +66,8 @@
 				86D8A1881EE848B8009C78E3 /* main.cpp */,
 				860D2CD71EF2C9CF008B55A7 /* world.cpp */,
 				860D2CD81EF2C9CF008B55A7 /* world.hpp */,
+				8612CF501F06923200E7C226 /* player.cpp */,
+				8612CF511F06923200E7C226 /* player.hpp */,
 			);
 			path = "C++FitnessRPG";
 			sourceTree = "<group>";
@@ -126,6 +131,7 @@
 			files = (
 				860D2CD91EF2C9CF008B55A7 /* world.cpp in Sources */,
 				86D8A1891EE848B8009C78E3 /* main.cpp in Sources */,
+				8612CF521F06923200E7C226 /* player.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
