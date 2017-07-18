@@ -19,9 +19,18 @@ class Player
     // attributes
 public:
     string playerName = "Generic";
-    int playerStats [9] = {0};
+    
+    Player();
     
     void sayHello();
+    
+    int getResource();
+    
+    int getStat(int stat);
+    
+private:
+    int playerStats [9];
+    int resources;
     
 };
 

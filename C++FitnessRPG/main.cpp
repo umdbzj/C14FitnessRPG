@@ -74,15 +74,11 @@ int main(int argc, const char * argv[]) {
         if (controlChoice == 1){
                 cout << "How big do you want the world to be? (One int between 1 and 50) " << endl;
                 cin >> world_size;
-                int temp = 0;
                 InitWorld(world_size, World);
                 cout << "What is your name? " << endl;
                 cin >> hero.playerName;
-                cout << "Pick a whole number between 1 and 15: " << endl;
-                cin >> hero.playerStats[stamina];
-                cout << "Player " << hero.playerName << " has stamina of " << hero.playerStats[stamina] << endl;
+                cout << "Player " << hero.playerName << " has stamina of " << hero.getStat(stamina) << endl;
                 hero.sayHello();
-                cout << "I can create a new variable: " << temp << endl;
         }
         else if (controlChoice == 2) {
                 cout << "I would load an existing game at this point." << endl;
