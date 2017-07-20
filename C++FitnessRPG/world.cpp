@@ -51,8 +51,8 @@ void InitWorld(int world_size, std::vector<int>& World) {
     
     if (World.size() == 0) {
         for (int i = 0; i < sq_map_size; i++) {
-            //  World.push_back(rand() % (HIGH - LOW + 1) + LOW);
-            World.push_back(0);  // temp for testing
+            World.push_back(rand() % (HIGH - LOW + 1) + LOW);
+           // World.push_back(0);  // temp for testing
         }
     }
     else {
