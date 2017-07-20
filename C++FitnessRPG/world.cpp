@@ -49,10 +49,17 @@ void InitWorld(int world_size, std::vector<int>& World) {
     time(&seconds);
     srand((unsigned int) seconds);
     
-    for (int i = 0; i < sq_map_size; i++) {
-      //  World.push_back(rand() % (HIGH - LOW + 1) + LOW);
-        World.push_back(0);  // temp for testing
+    if (World.size() == 0) {
+        for (int i = 0; i < sq_map_size; i++) {
+            //  World.push_back(rand() % (HIGH - LOW + 1) + LOW);
+            World.push_back(0);  // temp for testing
+        }
     }
+    else {
+        cout << "You already have a world - you can't make another!" << endl;
+    }
+    
+
     
  
 // test printing to see if it worked
