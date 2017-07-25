@@ -9,6 +9,15 @@
 #ifndef world_hpp
 #define world_hpp
 
+class Loc
+{
+    int terrain;
+    int resouce;
+    
+public:
+    Loc();
+};
+
 void InitWorld(int world_size, std::vector<int>& World);
 
 void PrintWorld(int world_size, std::vector<int>& World);

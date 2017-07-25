@@ -34,24 +34,32 @@ enum Directions
     West
 };
 
-void InitWorld(int world_size, std::vector<int>& World) {
-    int sq_map_size = world_size * world_size;
-    string playerName;
+Loc::Loc() {
+    terrain = 0;
+    resouce = 0;
     
     // min and max of random number generator to match MapTypes enum
     const int LOW = 1;
     const int HIGH = 8;
-    
-    cout << "I am initializing a " << world_size << " x " << world_size << " world" << endl;
     
     // prep for random numbers
     time_t seconds;
     time(&seconds);
     srand((unsigned int) seconds);
     
+    terrain = (rand() % (HIGH - LOW + 1) + LOW);
+}
+
+void InitWorld(int world_size, std::vector<int>& World) {
+    int sq_map_size = world_size * world_size;
+
+    if (World.size() == 0) {
     for (int i = 0; i < sq_map_size; i++) {
-      //  World.push_back(rand() % (HIGH - LOW + 1) + LOW);
         World.push_back(0);  // temp for testing
+        }
+    }
+    else {
+        cout << "Can't create another world! But you knew that already, didn't you?" << endl;
     }
     
  
