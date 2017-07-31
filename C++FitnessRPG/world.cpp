@@ -17,45 +17,63 @@ using namespace std;
 enum MapTypes
 {
     Grass = 1,
-    Rock,
-    Incline,
-    Wall,
+    Forest,
+    Hill,
+    Obstacle,
     Water,
     Road,
     Building,
-    Shrine
+    NPC
 };
 
 enum Directions
 {
     North,
+    Northeast,
     East,
+    Southeast,
     South,
-    West
+    Soutwest,
+    West,
+    Northwest
 };
 
 Loc::Loc() {
-    terrain = 0;
-    resouce = 0;
+//   int terrain = 0;
+//    int resource = 0;
     
+}
+
+void Loc::setTerrain(int terrain) {
+    Loc::terrain = terrain;
+};
+
+int Loc::getTerrain() {
+    return Loc::terrain;
+    
+}
+
+void InitWorld(int world_size, std::vector<Loc>& World) {
+    int sq_map_size = world_size * world_size;
+
+    if (World.size() == 0) {
+    // temporary - move back out if I can fix the random number generator
     // min and max of random number generator to match MapTypes enum
     const int LOW = 1;
-    const int HIGH = 8;
-    
+    const int HIGH = 7;
+        
     // prep for random numbers
     time_t seconds;
     time(&seconds);
     srand((unsigned int) seconds);
     
-    terrain = (rand() % (HIGH - LOW + 1) + LOW);
-}
-
-void InitWorld(int world_size, std::vector<int>& World) {
-    int sq_map_size = world_size * world_size;
-
-    if (World.size() == 0) {
     for (int i = 0; i < sq_map_size; i++) {
-        World.push_back(0);  // temp for testing
+        cout << "Test index: " << i << " ";
+        Loc newLocation;
+        int temp = (rand() % (HIGH - LOW + 1) + LOW);
+        newLocation.setTerrain(temp);
+        cout << "Terrain being added: " << newLocation.getTerrain() << endl;
+        World.push_back(newLocation);
         }
     }
     else {
@@ -74,7 +92,7 @@ void InitWorld(int world_size, std::vector<int>& World) {
 
 }
 
-void PrintWorld(int world_size, std::vector<int>& World) {
+void PrintWorld(int world_size, std::vector<Loc>& World) {
     int temp = world_size;
     int num_cells = world_size * world_size;
     
@@ -85,9 +103,10 @@ void PrintWorld(int world_size, std::vector<int>& World) {
         cout << "I'm printing the " << temp << " x " << temp << " sized map!" << endl;
         cout << "That's " << num_cells << " big!" << endl;
         int current_position = 1;
-        for (auto element = World.cbegin(); element != World.cend(); ++ element)
-        {
-            cout << *element << " ";
+        
+        for (int i = 0; i < num_cells; i++) {
+            cout << " " << World[i].getTerrain() << " " ;
+            
             if ((current_position % world_size) == 0) {    // make row
                 cout << endl;
             }
@@ -101,7 +120,7 @@ void PrintWorld(int world_size, std::vector<int>& World) {
 
 }
 
-void UpdateWorld(std::vector<int>& World) {
+void UpdateWorld(std::vector<Loc>& World) {
     cout << "I'm ready to update!" << endl;
     
     // Assuming mutation probability is 0.001 (the default in Chapter 3 of dissertation)
@@ -125,7 +144,7 @@ void UpdateWorld(std::vector<int>& World) {
         test_num = (rand() % (HIGH - LOW + 1) + LOW);
         if (test_num == 1000) {
             cout << "Mutation at: " << location << endl;
-            World[location] = (rand() % (VAL_HIGH - VAL_LOW + 1) + VAL_LOW);
+ //           World[location] = (rand() % (VAL_HIGH - VAL_LOW + 1) + VAL_LOW);
             
         }
         location += 1;

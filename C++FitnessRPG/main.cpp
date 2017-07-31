@@ -53,7 +53,7 @@ int main(int argc, const char * argv[]) {
     int controlChoice = 0;
 
     
-    vector<int> World;
+    vector<Loc> World;
     Player hero;
     
     // Overall loop to control game flow

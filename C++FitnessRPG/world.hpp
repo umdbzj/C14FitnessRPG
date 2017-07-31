@@ -11,17 +11,22 @@
 
 class Loc
 {
-    int terrain;
-    int resouce;
+    int terrain; 
+    int resource;
     
 public:
+
     Loc();
+    
+    void setTerrain(int terrain);
+    
+    int getTerrain();
 };
 
-void InitWorld(int world_size, std::vector<int>& World);
+void InitWorld(int world_size, std::vector<Loc>& World);
 
-void PrintWorld(int world_size, std::vector<int>& World);
+void PrintWorld(int world_size, std::vector<Loc>& World);
 
-void UpdateWorld(std::vector<int>& World);
+void UpdateWorld(std::vector<Loc>& World);
 
 #endif /* world_hpp */
