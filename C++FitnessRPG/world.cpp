@@ -67,14 +67,17 @@ void InitWorld(int world_size, std::vector<Loc>& World) {
     time(&seconds);
     srand((unsigned int) seconds);
     
-    if (World.size() == 0) {
-        for (int i = 0; i < sq_map_size; i++) {
-            World.push_back(rand() % (HIGH - LOW + 1) + LOW);
-           // World.push_back(0);  // temp for testing
+    for (int i = 0; i < sq_map_size; i++) {
+     //   cout << "Test index: " << i << " ";
+        Loc newLocation;
+        int temp = (rand() % (HIGH - LOW + 1) + LOW);
+        newLocation.setTerrain(temp);
+    //    cout << "Terrain being added: " << newLocation.getTerrain() << endl;
+        World.push_back(newLocation);
         }
     }
     else {
-        cout << "You already have a world - you can't make another!" << endl;
+        cout << "Can't create another world! But you knew that already, didn't you?" << endl;
     }
     
 
