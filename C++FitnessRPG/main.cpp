@@ -53,7 +53,7 @@ int main(int argc, const char * argv[]) {
     int controlChoice = 0;
 
     
-    vector<int> World;
+    vector<Loc> World;
     Player hero;
     
     // Overall loop to control game flow
@@ -72,6 +72,7 @@ int main(int argc, const char * argv[]) {
         // a switch statement would make sense here except I can't seem to create new variables within
         // each case.
         if (controlChoice == 1){
+            if (world_size == 0 ) {
                 cout << "How big do you want the world to be? (One int between 1 and 50) " << endl;
                 cin >> world_size;
                 InitWorld(world_size, World);
@@ -79,6 +80,10 @@ int main(int argc, const char * argv[]) {
                 cin >> hero.playerName;
                 cout << "Player " << hero.playerName << " has stamina of " << hero.getStat(stamina) << endl;
                 hero.sayHello();
+            }
+            else {
+                cout << "The world already exists.  I cannot create another!" << endl;
+            }
         }
         else if (controlChoice == 2) {
                 cout << "I would load an existing game at this point." << endl;

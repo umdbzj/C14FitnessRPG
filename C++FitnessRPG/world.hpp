@@ -9,10 +9,24 @@
 #ifndef world_hpp
 #define world_hpp
 
-void InitWorld(int world_size, std::vector<int>& World);
+class Loc
+{
+    int terrain; 
+    int resource;
+    
+public:
 
-void PrintWorld(int world_size, std::vector<int>& World);
+    Loc();
+    
+    void setTerrain(int terrain);
+    
+    int getTerrain();
+};
 
-void UpdateWorld(std::vector<int>& World);
+void InitWorld(int world_size, std::vector<Loc>& World);
+
+void PrintWorld(int world_size, std::vector<Loc>& World);
+
+void UpdateWorld(std::vector<Loc>& World);
 
 #endif /* world_hpp */
