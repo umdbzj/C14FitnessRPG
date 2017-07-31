@@ -93,8 +93,7 @@ int main(int argc, const char * argv[]) {
         }
         else if (controlChoice == 4) {
                 cout << "I would prompt for your choice of direction and run an update ";
-                cout << "based on your choice.  Now, I'm just going to try to mutate ";
-                cout << "one or more items in the World." << endl;
+                cout << "based on your choice. " << endl;
                 UpdateWorld(World);
         }
         else if (controlChoice == 8) {
