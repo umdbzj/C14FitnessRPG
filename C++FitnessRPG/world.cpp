@@ -68,11 +68,11 @@ void InitWorld(int world_size, std::vector<Loc>& World) {
     srand((unsigned int) seconds);
     
     for (int i = 0; i < sq_map_size; i++) {
-        cout << "Test index: " << i << " ";
+     //   cout << "Test index: " << i << " ";
         Loc newLocation;
         int temp = (rand() % (HIGH - LOW + 1) + LOW);
         newLocation.setTerrain(temp);
-        cout << "Terrain being added: " << newLocation.getTerrain() << endl;
+    //    cout << "Terrain being added: " << newLocation.getTerrain() << endl;
         World.push_back(newLocation);
         }
     }
