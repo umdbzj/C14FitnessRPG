@@ -62,10 +62,7 @@ void InitWorld(int world_size, std::vector<Loc>& World) {
     const int LOW = 1;
     const int HIGH = 7;
         
-    // prep for random numbers
-    time_t seconds;
-    time(&seconds);
-    srand((unsigned int) seconds);
+
     
     for (int i = 0; i < sq_map_size; i++) {
      //   cout << "Test index: " << i << " ";
@@ -133,10 +130,7 @@ void UpdateWorld(std::vector<Loc>& World) {
     int test_num = 0;
     int location = 0;
     
-    // prep for random numbers
-    time_t seconds;
-    time(&seconds);
-    srand((unsigned int) seconds);
+
     
     // go through all items in the vector and determine if each has probability to mutate
     // if random number == 1000, then mutate (message and change item to a 9

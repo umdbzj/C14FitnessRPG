@@ -16,12 +16,8 @@ Player::Player() {
     int HIGH = 15;
     int LOW = 1;
     
+    Player::playerName = "Player 1";
     Player::resources = 5;
-    
-    // prep for random numbers
-    time_t seconds;
-    time(&seconds);
-    srand((unsigned int) seconds);
     
     for (int i = 0; i < 7; i++) {
        playerStats[i] = (rand() % (HIGH - LOW + 1) + LOW);
@@ -34,7 +30,7 @@ Player::Player() {
 
 void Player::sayHello() {
     
-    /*
+    /*  reminder of the enum order for stats
      strength,
      stamina,
      charisma,

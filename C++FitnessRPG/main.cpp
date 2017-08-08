@@ -10,6 +10,8 @@
 #include <vector>
 #include "world.hpp"
 #include "player.hpp"
+#include "characters.hpp"
+
 
 using namespace std;
 
@@ -21,10 +23,7 @@ int OpponentInfo()
     const int HIGH = 15;
     int stamina = 0;
     
-    // prep for random numbers
-        time_t seconds;
-        time(&seconds);
-        srand((unsigned int) seconds);
+
     
     stamina = rand() % (HIGH - LOW + 1) + LOW;
     cout << "Your opponent has stamina of: " << stamina << endl;
@@ -51,6 +50,11 @@ int main(int argc, const char * argv[]) {
     
     int world_size = 0;
     int controlChoice = 0;
+    
+    // prep for random numbers
+    time_t seconds;
+    time(&seconds);
+    srand((unsigned int) seconds);
 
     
     vector<Loc> World;
@@ -80,6 +84,10 @@ int main(int argc, const char * argv[]) {
                 cin >> hero.playerName;
                 cout << "Player " << hero.playerName << " has stamina of " << hero.getStat(stamina) << endl;
                 hero.sayHello();
+                Ally angel1;
+                angel1.Move();
+                Enemy demon1;
+                demon1.Move();
             }
             else {
                 cout << "The world already exists.  I cannot create another!" << endl;
